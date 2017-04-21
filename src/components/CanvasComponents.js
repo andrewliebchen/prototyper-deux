@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { List, Text } from 'rebass';
+
+import CanvasComponent from './CanvasComponent';
 
 class CanvasComponents extends Component {
   render() {
@@ -8,7 +9,11 @@ class CanvasComponents extends Component {
         {this.props.components.length > 0 ?
           <div>
             {this.props.components.map((component) => {
-              return <div key={component.id}>{component.name}</div>
+              return (
+                <CanvasComponent
+                  key={component.id}
+                  component={component} />
+              );
             })}
           </div>
         : <span>Nope</span>}

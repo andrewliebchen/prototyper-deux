@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPONENT } from './actions';
-
 function components(state = [], action) {
   switch (action.type) {
     case 'ADD_COMPONENT':

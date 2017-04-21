@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { addComponent } from '../actions';
 import { Button, Select } from 'rebass';
 
-const rebassComponents = [
-  { children: 'Arrow' },
-  { children: 'Avatar' },
-  { children: 'Badge' },
-];
+import { rebassComponents } from '../data';
+
 
 class AddComponent extends Component {
   constructor(props) {
