@@ -11,7 +11,8 @@
   "devDependencies": {
     "lodash": "^4.17.4",
     "react-scripts": "0.9.5",
-    "rebass": "^0.3.4"
+    "rebass": "^0.3.4",
+    "reflexbox": "^2.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

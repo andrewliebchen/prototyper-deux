@@ -63,61 +63,176 @@ import {
 /* eslint-enable */
 
 export const rebassComponents = [
-  { children: 'Arrow', component: React.createElement(Arrow, null, null), },
-  { children: 'Avatar', component: React.createElement(Avatar, null, null), },
-  { children: 'Badge', component: React.createElement(Badge, null, null), },
-  { children: 'Banner', component: React.createElement(Banner, null, null), },
-  { children: 'Block', component: React.createElement(Block, null, null), },
-  { children: 'Blockquote', component: React.createElement(Blockquote, null, null), },
-  { children: 'Breadcrumbs', component: React.createElement(Breadcrumbs, null, null), },
-  { children: 'Button', component: React.createElement(Button, null, null), },
-  { children: 'ButtonCircle', component: React.createElement(ButtonCircle, null, null), },
-  { children: 'ButtonOutline', component: React.createElement(ButtonOutline, null, null), },
-  { children: 'Card', component: React.createElement(Card, null, null), },
-  { children: 'CardImage', component: React.createElement(CardImage, null, null), },
-  { children: 'Checkbox', component: React.createElement(Checkbox, null, null), },
-  { children: 'Close', component: React.createElement(Close, null, null), },
-  { children: 'Container', component: React.createElement(Container, null, null), },
-  { children: 'Divider', component: React.createElement(Divider, null, null), },
-  { children: 'Donut', component: React.createElement(Donut, null, null), },
-  { children: 'DotIndicator', component: React.createElement(DotIndicator, null, null), },
-  { children: 'Drawer', component: React.createElement(Drawer, null, null), },
-  { children: 'Dropdown', component: React.createElement(Dropdown, null, null), },
-  { children: 'DropdownMenu', component: React.createElement(DropdownMenu, null, null), },
-  { children: 'Embed', component: React.createElement(Embed, null, null), },
-  { children: 'Fixed', component: React.createElement(Fixed, null, null), },
-  { children: 'Footer', component: React.createElement(Footer, null, null), },
-  { children: 'Heading', component: React.createElement(Heading, null, null), },
-  { children: 'HeadingLink', component: React.createElement(HeadingLink, null, null), },
-  { children: 'InlineForm', component: React.createElement(InlineForm, null, null), },
-  { children: 'Input', component: React.createElement(Input, null, null), },
-  { children: 'Label', component: React.createElement(Label, null, null), },
-  { children: 'LinkBlock', component: React.createElement(LinkBlock, null, null), },
-  { children: 'Media', component: React.createElement(Media, null, null), },
-  { children: 'Menu', component: React.createElement(Menu, null, null), },
-  { children: 'Message', component: React.createElement(Message, null, null), },
-  { children: 'NavItem', component: React.createElement(NavItem, null, null), },
-  { children: 'Overlay', component: React.createElement(Overlay, null, null), },
-  { children: 'PageHeader', component: React.createElement(PageHeader, null, null), },
-  { children: 'Panel', component: React.createElement(Panel, null, null), },
-  { children: 'PanelFooter', component: React.createElement(PanelFooter, null, null), },
-  { children: 'PanelHeader', component: React.createElement(PanelHeader, null, null), },
-  { children: 'Pre', component: React.createElement(Pre, null, null), },
-  { children: 'Progress', component: React.createElement(Progress, null, null), },
-  { children: 'Radio', component: React.createElement(Radio, null, null), },
-  { children: 'Rating', component: React.createElement(Rating, null, null), },
-  { children: 'Section', component: React.createElement(Section, null, null), },
-  { children: 'SectionHeader', component: React.createElement(SectionHeader, null, null), },
-  { children: 'Select', component: React.createElement(Select, null, null), },
-  { children: 'SequenceMap', component: React.createElement(SequenceMap, null, null), },
-  { children: 'SequenceMapStep', component: React.createElement(SequenceMapStep, null, null), },
-  { children: 'Slider', component: React.createElement(Slider, null, null), },
-  { children: 'Space', component: React.createElement(Space, null, null), },
-  { children: 'Stat', component: React.createElement(Stat, null, null), },
-  { children: 'Switch', component: React.createElement(Switch, null, null), },
-  { children: 'Table', component: React.createElement(Table, null, null), },
-  { children: 'Text', component: React.createElement(Text, null, null), },
-  { children: 'Textarea', component: React.createElement(Textarea, null, null), },
-  { children: 'Toolbar', component: React.createElement(Toolbar, null, null), },
-  { children: 'Tooltip', component: React.createElement(Tooltip, null, null), },
+  {
+    children: 'Arrow',
+    component: <Arrow/>,
+  }, {
+    children: 'Avatar',
+    component: <Avatar/>,
+  }, {
+    children: 'Badge',
+    component: <Badge/>,
+  }, {
+    children: 'Banner',
+    component: <Banner/>,
+  }, {
+    children: 'Block',
+    component: <Block/>,
+  }, {
+    children: 'Blockquote',
+    component: <Blockquote/>,
+  }, {
+    children: 'Breadcrumbs',
+    component: <Breadcrumbs/>,
+  }, {
+    children: 'Button',
+    component: <Button/>,
+  }, {
+    children: 'ButtonCircle',
+    component: <ButtonCircle/>,
+  }, {
+    children: 'ButtonOutline',
+    component: <ButtonOutline/>,
+  }, {
+    children: 'Card',
+    component: <Card/>,
+  }, {
+    children: 'CardImage',
+    component: <CardImage/>,
+  }, {
+    children: 'Checkbox',
+    component: <Checkbox/>,
+  }, {
+    children: 'Close',
+    component: <Close/>,
+  }, {
+    children: 'Container',
+    component: <Container/>,
+  }, {
+    children: 'Divider',
+    component: <Divider/>,
+  }, {
+    children: 'Donut',
+    component: <Donut/>,
+  }, {
+    children: 'DotIndicator',
+    component: <DotIndicator/>,
+  }, {
+    children: 'Drawer',
+    component: <Drawer/>,
+  }, {
+    children: 'Dropdown',
+    component: <Dropdown/>,
+  }, {
+    children: 'DropdownMenu',
+    component: <DropdownMenu/>,
+  }, {
+    children: 'Embed',
+    component: <Embed/>,
+  }, {
+    children: 'Fixed',
+    component: <Fixed/>,
+  }, {
+    children: 'Footer',
+    component: <Footer/>,
+  }, {
+    children: 'Heading',
+    component: <Heading/>,
+  }, {
+    children: 'HeadingLink',
+    component: <HeadingLink/>,
+  }, {
+    children: 'InlineForm',
+    component: <InlineForm/>,
+  }, {
+    children: 'Input',
+    component: <Input/>,
+  }, {
+    children: 'Label',
+    component: <Label/>,
+  }, {
+    children: 'LinkBlock',
+    component: <LinkBlock/>,
+  }, {
+    children: 'Media',
+    component: <Media/>,
+  }, {
+    children: 'Menu',
+    component: <Menu/>,
+  }, {
+    children: 'Message',
+    component: <Message/>,
+  }, {
+    children: 'NavItem',
+    component: <NavItem/>,
+  }, {
+    children: 'Overlay',
+    component: <Overlay/>,
+  }, {
+    children: 'PageHeader',
+    component: <PageHeader/>,
+  }, {
+    children: 'Panel',
+    component: <Panel/>,
+  }, {
+    children: 'PanelFooter',
+    component: <PanelFooter/>,
+  }, {
+    children: 'PanelHeader',
+    component: <PanelHeader/>,
+  }, {
+    children: 'Pre',
+    component: <Pre/>,
+  }, {
+    children: 'Progress',
+    component: <Progress/>,
+  }, {
+    children: 'Radio',
+    component: <Radio/>,
+  }, {
+    children: 'Rating',
+    component: <Rating/>,
+  }, {
+    children: 'Section',
+    component: <Section/>,
+  }, {
+    children: 'SectionHeader',
+    component: <SectionHeader/>,
+  }, {
+    children: 'Select',
+    component: <Select/>,
+  }, {
+    children: 'SequenceMap',
+    component: <SequenceMap/>,
+  }, {
+    children: 'SequenceMapStep',
+    component: <SequenceMapStep/>,
+  }, {
+    children: 'Slider',
+    component: <Slider/>,
+  }, {
+    children: 'Space',
+    component: <Space/>,
+  }, {
+    children: 'Stat',
+    component: <Stat/>,
+  }, {
+    children: 'Switch',
+    component: <Switch/>,
+  }, {
+    children: 'Table',
+    component: <Table/>,
+  }, {
+    children: 'Text',
+    component: <Text/>,
+  }, {
+    children: 'Textarea',
+    component: <Textarea/>,
+  }, {
+    children: 'Toolbar',
+    component: <Toolbar/>,
+  }, {
+    children: 'Tooltip',
+    component: <Tooltip/>,
+  }
 ];

@@ -7,6 +7,4 @@ const CanvasComponent = ({component}) => {
   return rebassComponent.component
 }
 
-
-
 export default CanvasComponent;
