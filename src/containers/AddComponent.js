@@ -5,7 +5,6 @@ import { Button, Select } from 'rebass';
 
 import { rebassComponents } from '../data';
 
-
 class AddComponent extends Component {
   constructor(props) {
     super(props);
