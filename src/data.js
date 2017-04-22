@@ -1,5 +1,3 @@
-import React from 'react';
-
 /* eslint-disable */
 import {
   Arrow,
@@ -65,174 +63,174 @@ import {
 export const rebassComponents = [
   {
     children: 'Arrow',
-    component: <Arrow/>,
+    component: Arrow,
   }, {
     children: 'Avatar',
-    component: <Avatar/>,
+    component: Avatar,
   }, {
     children: 'Badge',
-    component: <Badge/>,
+    component: Badge,
   }, {
     children: 'Banner',
-    component: <Banner/>,
+    component: Banner,
   }, {
     children: 'Block',
-    component: <Block/>,
+    component: Block,
   }, {
     children: 'Blockquote',
-    component: <Blockquote/>,
+    component: Blockquote,
   }, {
     children: 'Breadcrumbs',
-    component: <Breadcrumbs/>,
+    component: Breadcrumbs,
   }, {
     children: 'Button',
-    component: <Button/>,
+    component: Button,
   }, {
     children: 'ButtonCircle',
-    component: <ButtonCircle/>,
+    component: ButtonCircle,
   }, {
     children: 'ButtonOutline',
-    component: <ButtonOutline/>,
+    component: ButtonOutline,
   }, {
     children: 'Card',
-    component: <Card/>,
+    component: Card,
   }, {
     children: 'CardImage',
-    component: <CardImage/>,
+    component: CardImage,
   }, {
     children: 'Checkbox',
-    component: <Checkbox/>,
+    component: Checkbox,
   }, {
     children: 'Close',
-    component: <Close/>,
+    component: Close,
   }, {
     children: 'Container',
-    component: <Container/>,
+    component: Container,
   }, {
     children: 'Divider',
-    component: <Divider/>,
+    component: Divider,
   }, {
     children: 'Donut',
-    component: <Donut/>,
+    component: Donut,
   }, {
     children: 'DotIndicator',
-    component: <DotIndicator/>,
+    component: DotIndicator,
   }, {
     children: 'Drawer',
-    component: <Drawer/>,
+    component: Drawer,
   }, {
     children: 'Dropdown',
-    component: <Dropdown/>,
+    component: Dropdown,
   }, {
     children: 'DropdownMenu',
-    component: <DropdownMenu/>,
+    component: DropdownMenu,
   }, {
     children: 'Embed',
-    component: <Embed/>,
+    component: Embed,
   }, {
     children: 'Fixed',
-    component: <Fixed/>,
+    component: Fixed,
   }, {
     children: 'Footer',
-    component: <Footer/>,
+    component: Footer,
   }, {
     children: 'Heading',
-    component: <Heading/>,
+    component: Heading,
   }, {
     children: 'HeadingLink',
-    component: <HeadingLink/>,
+    component: HeadingLink,
   }, {
     children: 'InlineForm',
-    component: <InlineForm/>,
+    component: InlineForm,
   }, {
     children: 'Input',
-    component: <Input/>,
+    component: Input,
   }, {
     children: 'Label',
-    component: <Label/>,
+    component: Label,
   }, {
     children: 'LinkBlock',
-    component: <LinkBlock/>,
+    component: LinkBlock,
   }, {
     children: 'Media',
-    component: <Media/>,
+    component: Media,
   }, {
     children: 'Menu',
-    component: <Menu/>,
+    component: Menu,
   }, {
     children: 'Message',
-    component: <Message/>,
+    component: Message,
   }, {
     children: 'NavItem',
-    component: <NavItem/>,
+    component: NavItem,
   }, {
     children: 'Overlay',
-    component: <Overlay/>,
+    component: Overlay,
   }, {
     children: 'PageHeader',
-    component: <PageHeader/>,
+    component: PageHeader,
   }, {
     children: 'Panel',
-    component: <Panel/>,
+    component: Panel,
   }, {
     children: 'PanelFooter',
-    component: <PanelFooter/>,
+    component: PanelFooter,
   }, {
     children: 'PanelHeader',
-    component: <PanelHeader/>,
+    component: PanelHeader,
   }, {
     children: 'Pre',
-    component: <Pre/>,
+    component: Pre,
   }, {
     children: 'Progress',
-    component: <Progress/>,
+    component: Progress,
   }, {
     children: 'Radio',
-    component: <Radio/>,
+    component: Radio,
   }, {
     children: 'Rating',
-    component: <Rating/>,
+    component: Rating,
   }, {
     children: 'Section',
-    component: <Section/>,
+    component: Section,
   }, {
     children: 'SectionHeader',
-    component: <SectionHeader/>,
+    component: SectionHeader,
   }, {
     children: 'Select',
-    component: <Select/>,
+    component: Select,
   }, {
     children: 'SequenceMap',
-    component: <SequenceMap/>,
+    component: SequenceMap,
   }, {
     children: 'SequenceMapStep',
-    component: <SequenceMapStep/>,
+    component: SequenceMapStep,
   }, {
     children: 'Slider',
-    component: <Slider/>,
+    component: Slider,
   }, {
     children: 'Space',
-    component: <Space/>,
+    component: Space,
   }, {
     children: 'Stat',
-    component: <Stat/>,
+    component: Stat,
   }, {
     children: 'Switch',
-    component: <Switch/>,
+    component: Switch,
   }, {
     children: 'Table',
-    component: <Table/>,
+    component: Table,
   }, {
     children: 'Text',
-    component: <Text/>,
+    component: Text,
   }, {
     children: 'Textarea',
-    component: <Textarea/>,
+    component: Textarea,
   }, {
     children: 'Toolbar',
-    component: <Toolbar/>,
+    component: Toolbar,
   }, {
     children: 'Tooltip',
-    component: <Tooltip/>,
+    component: Tooltip,
   }
 ];
