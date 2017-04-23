@@ -6,6 +6,7 @@ import _ from 'lodash';
 
 import { rebassComponents } from '../data';
 
+
 class AddComponent extends Component {
   constructor(props) {
     super(props);
@@ -15,21 +16,58 @@ class AddComponent extends Component {
     };
   }
 
+  extractPropType(propTypes) {
+    console.log(propTypes);
+    let propNames = Object.keys(propTypes);
+
+    let extractPropType = (propTypes, propName) => {
+        let fakeProps = {};
+        fakeProps[propName] = 'dummy';
+        let error = propTypes[propName](fakeProps, propName);
+        if (error === null) {
+            return 'string';
+        } else {
+            // TODO: Make this work!!
+            // const EXPECTED_TYPE_PATTERN = /expected `(\w+)`/i;
+            // return error.toString().match(EXPECTED_TYPE_PATTERN)[1];
+            return 'number';
+        }
+    };
+
+    let extractPropIsRequired = (propTypes, propName) => {
+        let fakeProps = {};
+        fakeProps[propName] = null;
+        let error = propTypes[propName](fakeProps, propName);
+        return !!error;
+    };
+
+    return propNames.map(function (propName) {
+        return {
+            name: propName,
+            type: extractPropType(propTypes, propName),
+            isRequired: extractPropIsRequired(propTypes, propName)
+        }
+    });
+  }
+
   renderForm() {
     const { input } = this.state;
     if (input) {
       const propTypes = _.find(rebassComponents, { children: input }).component.propTypes;
+      const propTypesDetails = this.extractPropType(propTypes);
       return (
         <div>
-          {_.map(propTypes, (value, key) =>
+          {propTypesDetails.map((propType, i) =>
             <Input
-              key={key}
-              label={key}
-              name="input_example"
+              key={i}
+              label={propType.name}
+              name={propType.name}
+              required={propType.isRequired}
+              type={propType.type === 'string' ? 'text' : 'number'}
               placeholder="Add a prop"
               onChange={(event) => {
                 let newProps = {};
-                newProps[key] = event.target.value;
+                newProps[propType.name] = event.target.value;
                 this.setState({props: _.assign({}, this.state.props, newProps)});
               }}/>
           )}
