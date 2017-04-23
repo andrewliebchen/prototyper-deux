@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "lodash": "^4.17.4",
+    "react-draggable": "^2.2.3",
     "react-scripts": "0.9.5",
     "rebass": "^0.3.4",
     "reflexbox": "^2.2.3"
