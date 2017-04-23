@@ -3,6 +3,8 @@ import _ from 'lodash';
 
 import { rebassComponents } from '../data';
 
+import '../styles/Canvas.css';
+
 const CanvasComponent = ({ component }) => {
   const canvasComponent = _.find(
     rebassComponents,
@@ -24,10 +26,10 @@ const CanvasComponent = ({ component }) => {
   );
 }
 
-class CanvasComponents extends Component {
+class Canvas extends Component {
   render() {
     return (
-      <div>
+      <div className="Canvas">
         {this.props.components.length > 0 ?
           <div>
             {this.props.components.map((component) => {
@@ -44,4 +46,4 @@ class CanvasComponents extends Component {
   }
 };
 
-export default CanvasComponents;
+export default Canvas;

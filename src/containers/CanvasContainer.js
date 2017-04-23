@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import CanvasComponents from '../components/CanvasComponents';
+import Canvas from '../components/Canvas';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,9 +8,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const Canvas = connect(
+const CanvasContainer = connect(
   mapStateToProps
-)(CanvasComponents);
+)(Canvas);
 
 
-export default Canvas;
+export default CanvasContainer;
