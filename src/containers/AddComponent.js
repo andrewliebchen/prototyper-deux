@@ -12,7 +12,10 @@ class AddComponent extends Component {
     super(props);
     this.state = {
       name: null,
-      props: {},
+      props: {
+        top: 0,
+        left: 0,
+      },
       children: null,
     };
   }
@@ -81,6 +84,7 @@ class AddComponent extends Component {
         <Input
           label="Left"
           name="left"
+          defaultValue={this.state.props.left}
           placeholder="Specify left position"
           type="number"
           onChange={(event) => {
@@ -89,10 +93,11 @@ class AddComponent extends Component {
           <Input
             label="Top"
             name="top"
+            defaultValue={this.state.props.top}
             placeholder="Specify top position"
             type="number"
             onChange={(event) => {
-              ({props: _.assign({}, this.state.props, { top: event.target.value })});
+              this.setState({props: _.assign({}, this.state.props, { top: event.target.value })});
             }}/>
       </div>
     );
