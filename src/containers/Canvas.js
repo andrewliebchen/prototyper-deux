@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-
 const Canvas = connect(
   mapStateToProps
 )(CanvasComponents);

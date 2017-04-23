@@ -42,9 +42,10 @@ class AddComponent extends Component {
     this.setState({input: event.target.value});
   }
 
-  handleSubmit() {
-    const input = this.state.input;
-    this.props.dispatch(addComponent(input));
+  handleSubmit(event) {
+    event.preventDefault();
+    const { input, props } = this.state;
+    this.props.dispatch(addComponent(input, props));
   }
 
   render() {
