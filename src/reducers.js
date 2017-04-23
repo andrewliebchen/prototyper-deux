@@ -28,6 +28,17 @@ function prototypeState(state = [], action) {
           value: action.defaultValue,
         }
       ];
+    case 'TOGGLE_PROTOTYPE_STATE':
+      return state.map(state => {
+        console.log(state.id + ' ' + action.id);
+        if (state.id !== action.id) {
+          return state;
+        };
+
+        return Object.assign({}, state, {
+          value: !state.value
+        });
+      });
     default:
       return state;
   }

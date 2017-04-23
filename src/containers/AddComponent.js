@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addComponent } from '../actions';
-import { Button, Select, Input, Section } from 'rebass';
+import { Button, Select, Input, Section, Heading } from 'rebass';
 import _ from 'lodash';
 
+import { addComponent } from '../actions';
 import { rebassComponents } from '../data';
 
 
@@ -118,6 +118,7 @@ class AddComponent extends Component {
   render() {
     return (
       <Section>
+        <Heading level={3}>Components</Heading>
         <form className="NewComponent">
           <Select
             label="Select component"

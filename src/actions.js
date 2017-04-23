@@ -18,3 +18,10 @@ export const addPrototypeState = (key, defaultValue) => {
     defaultValue,
   };
 }
+
+export const togglePrototypeState = (id) => {
+  return {
+    type: 'TOGGLE_PROTOTYPE_STATE',
+    id,
+  };
+}
