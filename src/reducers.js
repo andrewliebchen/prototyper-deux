@@ -9,6 +9,7 @@ function components(state = [], action) {
           id: action.id,
           name: action.name,
           props: action.props,
+          children: action.children,
         }
       ]
     default:

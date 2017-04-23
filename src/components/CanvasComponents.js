@@ -5,9 +5,14 @@ import { rebassComponents } from '../data';
 
 const CanvasComponent = ({ component }) => {
   const canvasComponent = _.find(rebassComponents, { children: component.name });
+
   return (
     <span style={{position: 'absolute'}}>
-      {React.createElement(canvasComponent.component, component.props)}
+      {React.createElement(
+        canvasComponent.component,
+        component.props,
+        component.children,
+      )}
     </span>
   );
 }

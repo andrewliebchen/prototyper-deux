@@ -13,11 +13,11 @@ class AddComponent extends Component {
     this.state = {
       input: null,
       props: {},
+      children: null,
     };
   }
 
   extractPropType(propTypes) {
-    console.log(propTypes);
     let propNames = Object.keys(propTypes);
 
     let extractPropType = (propTypes, propName) => {
@@ -50,7 +50,7 @@ class AddComponent extends Component {
     });
   }
 
-  renderForm() {
+  renderPropsFields() {
     const { input } = this.state;
     if (input) {
       const propTypes = _.find(rebassComponents, { children: input }).component.propTypes;
@@ -82,8 +82,8 @@ class AddComponent extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { input, props } = this.state;
-    this.props.dispatch(addComponent(input, props));
+    const { input, props, children } = this.state;
+    this.props.dispatch(addComponent(input, props, children));
   }
 
   render() {
@@ -94,8 +94,19 @@ class AddComponent extends Component {
           name="selectComponent"
           options={rebassComponents}
           onChange={this.handleSelect.bind(this)}/>
-        {this.renderForm()}
-        <Button onClick={this.handleSubmit.bind(this)}>
+        {this.state.input &&
+          <Input
+            label="children"
+            name="children"
+            placeholder="Add children"
+            onChange={(event) => {
+              this.setState({children: event.target.value});
+            }}/>
+        }
+        {this.renderPropsFields()}
+        <Button
+          disabled={!this.state.input}
+          onClick={this.handleSubmit.bind(this)}>
           Add component
         </Button>
       </form>
