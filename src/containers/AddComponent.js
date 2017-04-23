@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addComponent } from '../actions';
-import { Button, Select, Input } from 'rebass';
+import { Button, Select, Input, Section } from 'rebass';
 import _ from 'lodash';
 
 import { rebassComponents } from '../data';
@@ -117,19 +117,21 @@ class AddComponent extends Component {
 
   render() {
     return (
-      <form className="NewComponent">
-        <Select
-          label="Select component"
-          name="selectComponent"
-          options={rebassComponents}
-          onChange={this.handleSelect.bind(this)}/>
-        {this.state.name && this.renderPropsFields()}
-        <Button
-          disabled={!this.state.name}
-          onClick={this.handleSubmit.bind(this)}>
-          Add component
-        </Button>
-      </form>
+      <Section>
+        <form className="NewComponent">
+          <Select
+            label="Select component"
+            name="selectComponent"
+            options={rebassComponents}
+            onChange={this.handleSelect.bind(this)}/>
+          {this.state.name && this.renderPropsFields()}
+          <Button
+            disabled={!this.state.name}
+            onClick={this.handleSubmit.bind(this)}>
+            Add component
+          </Button>
+        </form>
+      </Section>
     );
   }
 };

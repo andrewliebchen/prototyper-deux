@@ -11,14 +11,31 @@ function components(state = [], action) {
           props: action.props,
           children: action.children,
         }
-      ]
+      ];
     default:
-      return state
+      return state;
+  }
+}
+
+function prototypeState(state = [], action) {
+  switch (action.type) {
+    case 'ADD_PROTOTYPE_STATE':
+      return [
+        ...state,
+        {
+          id: action.id,
+          key: action.key,
+          value: action.defaultValue,
+        }
+      ];
+    default:
+      return state;
   }
 }
 
 const prototyperApp = combineReducers({
-  components
+  components,
+  prototypeState,
 });
 
 export default prototyperApp;
