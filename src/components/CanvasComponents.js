@@ -4,10 +4,17 @@ import _ from 'lodash';
 import { rebassComponents } from '../data';
 
 const CanvasComponent = ({ component }) => {
-  const canvasComponent = _.find(rebassComponents, { children: component.name });
+  const canvasComponent = _.find(
+    rebassComponents,
+    { children: component.name }
+  );
 
   return (
-    <span style={{position: 'absolute'}}>
+    <span style={{
+      position: 'absolute',
+      top: `${component.props.top}px`,
+      left: `${component.props.left}px`,
+    }}>
       {React.createElement(
         canvasComponent.component,
         component.props,

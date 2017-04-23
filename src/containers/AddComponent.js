@@ -11,7 +11,7 @@ class AddComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: null,
+      name: null,
       props: {},
       children: null,
     };
@@ -51,39 +51,63 @@ class AddComponent extends Component {
   }
 
   renderPropsFields() {
-    const { input } = this.state;
-    if (input) {
-      const propTypes = _.find(rebassComponents, { children: input }).component.propTypes;
-      const propTypesDetails = this.extractPropType(propTypes);
-      return (
-        <div>
-          {propTypesDetails.map((propType, i) =>
-            <Input
-              key={i}
-              label={propType.name}
-              name={propType.name}
-              required={propType.isRequired}
-              type={propType.type === 'string' ? 'text' : 'number'}
-              placeholder="Add a prop"
-              onChange={(event) => {
-                let newProps = {};
-                newProps[propType.name] = event.target.value;
-                this.setState({props: _.assign({}, this.state.props, newProps)});
-              }}/>
-          )}
-        </div>
-      )
-    }
+    const { name } = this.state;
+    const propTypes = _.find(rebassComponents, { children: name }).component.propTypes;
+    const propTypesDetails = this.extractPropType(propTypes);
+
+    return (
+      <div>
+        <Input
+          label="children"
+          name="children"
+          placeholder="Add children"
+          onChange={(event) => {
+            this.setState({children: event.target.value});
+          }}/>
+        {propTypesDetails.map((propType, i) =>
+          <Input
+            key={i}
+            label={propType.name}
+            name={propType.name}
+            required={propType.isRequired}
+            type={propType.type === 'string' ? 'text' : 'number'}
+            placeholder="Add a prop"
+            onChange={(event) => {
+              let newProps = {};
+              newProps[propType.name] = event.target.value;
+              this.setState({props: _.assign({}, this.state.props, newProps)});
+            }}/>
+        )}
+        <Input
+          label="Left"
+          name="left"
+          placeholder="Specify left position"
+          type="number"
+          onChange={(event) => {
+            this.setState({props: _.assign({}, this.state.props, { left: event.target.value })});
+          }}/>
+          <Input
+            label="Top"
+            name="top"
+            placeholder="Specify top position"
+            type="number"
+            onChange={(event) => {
+              ({props: _.assign({}, this.state.props, { top: event.target.value })});
+            }}/>
+      </div>
+    );
   }
 
   handleSelect(event) {
-    this.setState({input: event.target.value});
+    this.setState({name: event.target.value});
   }
 
   handleSubmit(event) {
+    const { name, props, children } = this.state;
     event.preventDefault();
-    const { input, props, children } = this.state;
-    this.props.dispatch(addComponent(input, props, children));
+    this.props.dispatch(
+      addComponent(name, props, children)
+    );
   }
 
   render() {
@@ -94,18 +118,9 @@ class AddComponent extends Component {
           name="selectComponent"
           options={rebassComponents}
           onChange={this.handleSelect.bind(this)}/>
-        {this.state.input &&
-          <Input
-            label="children"
-            name="children"
-            placeholder="Add children"
-            onChange={(event) => {
-              this.setState({children: event.target.value});
-            }}/>
-        }
-        {this.renderPropsFields()}
+        {this.state.name && this.renderPropsFields()}
         <Button
-          disabled={!this.state.input}
+          disabled={!this.state.name}
           onClick={this.handleSubmit.bind(this)}>
           Add component
         </Button>
