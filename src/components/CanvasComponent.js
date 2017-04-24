@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Draggable from 'react-draggable';
 
+import { updateComponentPosition } from '../actions';
 import { rebassComponents } from '../data';
 
 class CanvasComponent extends Component {
@@ -17,8 +19,13 @@ class CanvasComponent extends Component {
     this.setState({editing: true});
   }
 
-  handleDragStop() {
+  handleDragStop(event, data) {
     this.setState({editing: false});
+    this.props.dispatch(updateComponentPosition(
+      this.props.component.id,
+      data.x,
+      data.y,
+    ));
   }
 
   handleDrag() {
@@ -42,8 +49,8 @@ class CanvasComponent extends Component {
       <Draggable
         key={component.id}
         defaultPosition={{
-          x: component.props.left,
-          y: component.props.top
+          x: component.props.x,
+          y: component.props.y
         }}
         onDrag={this.handleDrag}
         onStop={this.handleDragStop.bind(this)}
@@ -65,4 +72,4 @@ CanvasComponent.propTypes = {
   component: PropTypes.object
 }
 
-export default CanvasComponent;
+export default connect()(CanvasComponent);

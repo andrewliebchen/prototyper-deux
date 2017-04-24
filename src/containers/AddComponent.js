@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Select, Input, Section, Heading } from 'rebass';
+import { Button, Select, Input, Section, SectionHeader } from 'rebass';
 import _ from 'lodash';
 
 import { addComponent } from '../actions';
@@ -13,8 +13,8 @@ class AddComponent extends Component {
     this.state = {
       name: null,
       props: {
-        top: 0,
-        left: 0,
+        x: 0,
+        y: 0,
       },
       children: null,
     };
@@ -82,22 +82,22 @@ class AddComponent extends Component {
             }}/>
         )}
         <Input
-          label="Left"
-          name="left"
-          defaultValue={this.state.props.left}
-          placeholder="Specify left position"
+          label="X position"
+          name="x"
+          defaultValue={this.state.props.x}
+          placeholder="Specify X position"
           type="number"
           onChange={(event) => {
-            this.setState({props: _.assign({}, this.state.props, { left: event.target.value })});
+            this.setState({props: _.assign({}, this.state.props, { x: event.target.value })});
           }}/>
           <Input
-            label="Top"
-            name="top"
-            defaultValue={this.state.props.top}
-            placeholder="Specify top position"
+            label="Y position"
+            name="y"
+            defaultValue={this.state.props.y}
+            placeholder="Specify Y position"
             type="number"
             onChange={(event) => {
-              this.setState({props: _.assign({}, this.state.props, { top: event.target.value })});
+              this.setState({props: _.assign({}, this.state.props, { y: event.target.value })});
             }}/>
       </div>
     );
@@ -118,7 +118,7 @@ class AddComponent extends Component {
   render() {
     return (
       <Section>
-        <Heading level={3}>Components</Heading>
+        <SectionHeader heading="Components"/>
         <form className="NewComponent">
           <Select
             label="Select component"

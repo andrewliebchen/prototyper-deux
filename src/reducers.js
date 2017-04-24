@@ -12,6 +12,16 @@ function components(state = [], action) {
           children: action.children,
         }
       ];
+    case 'UPDATE_COMPONENT_POSITION':
+      return state.map(state => {
+        if (state.id !== action.id) {
+          return state;
+        };
+
+        return Object.assign({}, state, {
+          props: Object.assign({}, state.props, {x: action.x, y: action.y}),
+        });
+      });
     default:
       return state;
   }
@@ -30,7 +40,6 @@ function prototypeState(state = [], action) {
       ];
     case 'TOGGLE_PROTOTYPE_STATE':
       return state.map(state => {
-        console.log(state.id + ' ' + action.id);
         if (state.id !== action.id) {
           return state;
         };

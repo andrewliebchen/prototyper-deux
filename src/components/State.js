@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InlineForm, Section, Heading, Switch } from 'rebass';
+import { InlineForm, Section, SectionHeader, Switch } from 'rebass';
 
 import { addPrototypeState, togglePrototypeState } from '../actions';
 
@@ -15,7 +15,7 @@ class State extends Component {
     const { dispatch, prototypeState } = this.props;
     return (
       <Section className="State">
-        <Heading level={3}>State</Heading>
+        <SectionHeader heading="State"/>
         {prototypeState.map((state) =>
           <div key={state.id}>
             {state.key}

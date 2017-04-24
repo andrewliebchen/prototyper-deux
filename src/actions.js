@@ -10,6 +10,15 @@ export const addComponent = (name, props, children) => {
   };
 }
 
+export const updateComponentPosition = (id, x, y) => {
+  return {
+    type: 'UPDATE_COMPONENT_POSITION',
+    id,
+    x,
+    y,
+  };
+}
+
 export const addPrototypeState = (key, defaultValue) => {
   return {
     type: 'ADD_PROTOTYPE_STATE',
