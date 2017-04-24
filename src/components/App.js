@@ -1,4 +1,5 @@
 import React from 'react';
+import { Section, SectionHeader } from 'rebass';
 import { Flex, Box } from 'reflexbox';
 
 import CanvasContainer from '../containers/CanvasContainer';
@@ -8,7 +9,10 @@ import StateContainer from '../containers/StateContainer';
 const App = () =>
   <Flex className="App">
     <Box col={8}>
-      <CanvasContainer/>
+      <Section>
+        <SectionHeader heading="Preview"/>
+        <CanvasContainer/>
+      </Section>
     </Box>
     <Box col={4} className="Sidebar">
       <StateContainer/>

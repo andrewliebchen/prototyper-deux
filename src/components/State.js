@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { InlineForm, Section, SectionHeader, Switch } from 'rebass';
 
 import { addPrototypeState, togglePrototypeState } from '../actions';
@@ -35,7 +36,7 @@ class State extends Component {
           }}
           onClick={(event) => {
             event.preventDefault();
-            dispatch(addPrototypeState(this.state.input, true));
+            dispatch(addPrototypeState(_.camelCase(this.state.input), true));
           }}/>
       </Section>
     );
